@@ -7,7 +7,7 @@
 
 ชื่อ-สกุล :ชนะชัย ชำนาญหมอ
 
-GitHub Page URL :https://cpe207-students-167.github.io/lab07-DAVIESBACK/
+GitHub Page URL :
 
 ---
 
