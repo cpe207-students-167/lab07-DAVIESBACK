@@ -87,10 +87,20 @@ submitBtn.addEventListener('click', function(event) {
   const isConfirmPasswordValid = validateConfirmPassword();
 
   if (isFirstNameValid && isLastNameValid && isEmailValid && isPasswordValid && isConfirmPasswordValid) {
+    
     alert('Registered successfully');
+
+    
+    firstNameInput.classList.add('is-valid');
+    lastNameInput.classList.add('is-valid');
+    emailInput.classList.add('is-valid');
+    passwordInput.classList.add('is-valid');
+    confirmPasswordInput.classList.add('is-valid');
   } else {
+    
     alert('Please fix the errors in the form');
   }
 });
+
 
 resetBtn.addEventListener('click', resetForm);
