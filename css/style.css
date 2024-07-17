@@ -13,3 +13,6 @@
 .is-invalid {
   border: 1px solid red !important;
 }
+.is-valid {
+  border-color: #198754 !important;
+}
