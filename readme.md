@@ -3,11 +3,11 @@
 
 ### ป้อนข้อมูลนักศึกษา
 
-รหัส นศ.:
+รหัส นศ.:660612140
 
-ชื่อ-สกุล :
+ชื่อ-สกุล :ชนะชัย ชำนาญหมอ
 
-GitHub Page URL :
+GitHub Page URL :https://cpe207-students-167.github.io/lab07-DAVIESBACK/
 
 ---
 
