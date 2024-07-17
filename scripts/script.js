@@ -1,4 +1,3 @@
-
 const firstNameInput = document.querySelector("#first-name-input");
 const lastNameInput = document.querySelector("#last-name-input");
 const emailInput = document.querySelector("#email-input");
@@ -25,37 +24,51 @@ function toggleError(input, isValid) {
 function validateFirstName() {
   const value = firstNameInput.value.trim();
   const isValid = /^[A-Za-z]+$/.test(value);
-  toggleError(firstNameInput, isValid);
-  return isValid;
+  toggleError(firstNameInput, value.length > 0 && isValid);
+  return value.length > 0 && isValid;
 }
 
 function validateLastName() {
   const value = lastNameInput.value.trim();
   const isValid = /^[A-Za-z]+$/.test(value);
-  toggleError(lastNameInput, isValid);
-  return isValid;
+  toggleError(lastNameInput, value.length > 0 && isValid);
+  return value.length > 0 && isValid;
 }
 
 function validateEmailInput() {
   const value = emailInput.value.trim();
   const isValid = validateEmail(value);
-  toggleError(emailInput, isValid);
-  return isValid;
+  toggleError(emailInput, value.length > 0 && isValid);
+  return value.length > 0 && isValid;
 }
 
 function validatePassword() {
   const value = passwordInput.value.trim();
   const isValid = value.length >= 6;
-  toggleError(passwordInput, isValid);
-  return isValid;
+  toggleError(passwordInput, value.length > 0 && isValid);
+  return value.length > 0 && isValid;
 }
 
 function validateConfirmPassword() {
   const passwordValue = passwordInput.value.trim();
   const confirmPasswordValue = confirmPasswordInput.value.trim();
   const isValid = confirmPasswordValue === passwordValue;
-  toggleError(confirmPasswordInput, isValid);
-  return isValid;
+  toggleError(confirmPasswordInput, confirmPasswordValue.length > 0 && isValid);
+  return confirmPasswordValue.length > 0 && isValid;
+}
+
+function resetForm() {
+  firstNameInput.value = '';
+  lastNameInput.value = '';
+  emailInput.value = '';
+  passwordInput.value = '';
+  confirmPasswordInput.value = '';
+
+  firstNameInput.classList.remove('is-invalid');
+  lastNameInput.classList.remove('is-invalid');
+  emailInput.classList.remove('is-invalid');
+  passwordInput.classList.remove('is-invalid');
+  confirmPasswordInput.classList.remove('is-invalid');
 }
 
 firstNameInput.addEventListener('input', validateFirstName);
@@ -80,16 +93,4 @@ submitBtn.addEventListener('click', function(event) {
   }
 });
 
-resetBtn.addEventListener('click', function() {
-  firstNameInput.value = '';
-  lastNameInput.value = '';
-  emailInput.value = '';
-  passwordInput.value = '';
-  confirmPasswordInput.value = '';
-
-  firstNameInput.classList.remove('is-invalid');
-  lastNameInput.classList.remove('is-invalid');
-  emailInput.classList.remove('is-invalid');
-  passwordInput.classList.remove('is-invalid');
-  confirmPasswordInput.classList.remove('is-invalid');
-});
+resetBtn.addEventListener('click', resetForm);
